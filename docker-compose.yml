@@ -41,7 +41,9 @@ services:
         ipv4_address: 10.20.20.20
 
   abstruse-worker:
-    image: abstruse/abstruse-worker:latest
+    build:
+      context: .
+      dockerfile: "Dockerfile.worker"
     container_name: abstruse-demo-worker
     restart: unless-stopped
     depends_on:
